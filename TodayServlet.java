@@ -26,7 +26,7 @@ public class TodayServlet extends HttpServlet {
 		PrintWriter writer=response.getWriter();
 		writer.println("<html>");
 		writer.println("<head><title>현재 시간</title></head>");
-		writer.println("<body>");
+		writer.println("<body style='position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);'>");
 		writer.println("현재 시간 : ");
 		writer.println(now.toString());
 		writer.println("</body>");
