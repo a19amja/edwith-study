@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <style>
+        * {
+            text-align: center;
+        }
+
+        body {
+            background-color: lightgray;
+            padding: 10px 10%;
+        }
+
+        header {
+            background-color: white;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        header ul {
+            /* position: relative; */
+            /* overflow: hidden; */
+            float: right;
+        }
+
+        ul {
+            padding: 0px;
+        }
+
+        li {
+            list-style: none;
+            background-color: rgb(133, 175, 177);
+            box-shadow: 1px 1px 10px 1px gray;
+        }
+
+        header li {
+            float: left;
+            margin: 10px;
+            padding: 10px 50px;
+            color: purple;
+        }
+
+        main {
+            background-color: white;
+            padding: 20px;
+        }
+
+        main li {
+            color: white;
+            padding: 40px 25px;
+            display: inline-block;
+            margin: 10px;
+            font-size: 1.2em;
+        }
+
+        footer {
+            background-color: white;
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        footer p {
+            color: rgb(133, 175, 177);
+        }
+
+        .image_div img {
+            /* position: absolute;
+            top: 0;
+            left: 0; */
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <a href="index.html"><li>홈</li></a>
+            <a href="aboutme.html"><li>자기소개</li></a>
+            <a href="photo.html"><li>내 사진</li></a>
+            <a href="http://localhost:8080/aboutme/today"><li>몇 시예요</li></a>
+        </ul>
+    </header>
+
+    <main>
+        <h1>웹프론트엔드 개발자~! 정선아</h1>
+        <p>함께 개발하고 같이 성장하고 싶어요. <br> 서울특별시 강동구 어딘가에 살고 있어요!</p>
+        <ul>
+            <li>자기소개 </li>
+            <li>내 사진</li>
+        </ul>
+        <div class="image_div">
+            <img src="naver_map.png" alt="map">
+        </div>
+    </main>
+
+    <footer>
+        <p>standingchild@sju.ac.kr</p>
+    </footer>
+</body>
+
+</html>
