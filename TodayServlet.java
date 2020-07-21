@@ -19,7 +19,7 @@ public class TodayServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
-     * @see HttpServlet#HttpServlet()
+     * @see HttpServlet#HttpServlet
      */
     public TodayServlet() {
         super();
@@ -30,7 +30,7 @@ public class TodayServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html;charset=utf--8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		out.print("<a href='index.html'><h1>메인 화면</h1></a>");
 		
@@ -38,7 +38,7 @@ public class TodayServlet extends HttpServlet {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/M/dd H:mm");
         String formatted = current.format(formatter);
         
-        out.println("<h1>현재시간 : " + formatted + "</h1>");
+        out.println("<h1 style='position:absolute; top:50%; left:50%; transform: translate(-50%, -50%)'>현재시간 : " + formatted + "</h1>");
 	}
 
 }
