@@ -1,0 +1,99 @@
+@charset "EUC-KR";
+body{
+    background-color:#ffd350;
+}
+nav,section,footer{
+    background-color:#ffffffa8;
+    display:block;
+    clear:both;
+}
+nav,section{
+    margin-bottom:20px;
+}
+nav{
+    overflow:hidden;
+}
+#buttonsection li{
+    text-align:center;
+    float: left;
+    list-style-type: none;
+    background-color: #ffd350;
+    width:100px;
+    box-shadow:3px 3px 4px 2px grey;
+    padding: 10px;
+    margin: 15px;
+}
+a{
+    text-decoration:none; 
+    color:black;
+}
+a:visited{
+    color:black;
+}
+#buttonsection{
+    float:right;
+    padding:0px 40px;
+}
+.homeButton{
+    list-style-type: none;
+    width: 100px;
+    height:100px;
+    text-align:center;
+    vertical-align: middle;
+    border:none;
+    background-color: #ffd350;
+    box-shadow:3px 3px 4px 2px grey;
+    margin:0px 20px;
+    line-height: 100px;
+}
+h1,h5{
+    text-align:center;
+}
+h1{
+    padding-top:10px;
+    margin:10px 0px;
+}
+h5{
+    margin:10px 0px;
+}
+#buttoncontainer{
+    display:flex;
+    justify-content: center;
+    padding:0px;
+}
+img{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+p{
+    color:grey;
+    text-align:center;
+    padding:20px 0px;
+}
+article>h1, article>h5{
+    text-align:left;
+}
+#about{
+    width:90%;
+    height:90%;
+    padding:2% 4%;
+    margin-left:auto;
+    margin-right:auto;
+}
+article>img{
+    border:10px orange solid;
+    padding:0px 0px;
+    float:left;
+    clear:both;
+    margin-right:20px;
+}
+#photocontainer{
+    padding:5% 5% 5% 5%;
+    overflow:hidden;
+}
+.photoc{
+    padding:30px;
+}
