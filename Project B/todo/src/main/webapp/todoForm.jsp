@@ -113,7 +113,7 @@ button[type="submit"], [type="reset"] {
 <body>
 	<main>
 		<section>
-			<form method="POST" action="/TodoAddServlet.java">
+			<form method="POST" action="/todo/TodoAddServlet">
 				<h1>할 일 등록</h1>
 
 				<div class="input-title">어떤 일인가요?</div>
@@ -123,7 +123,9 @@ button[type="submit"], [type="reset"] {
 				<input class="name" type="text" name="name" placeholder="홍길동" />
 
 				<div class="input-title">우선 순위를 선택하세요.</div>
-				<input type="radio" name="priority" value="1" /> <span class="priority">1순위</span> <input type="radio" name="priority" value="2" /> <span class="priority">2순위</span> <input type="radio" name="priority" value="3" /> <span class="priority">3순위</span>
+				<input type="radio" name="priority" value="1" /> <span class="priority">1순위</span>
+				<input type="radio" name="priority" value="2" /> <span class="priority">2순위</span>
+				<input type="radio" name="priority" value="3" /> <span class="priority">3순위</span>
 
 				<div class="btn">
 					<span class="btn-left">

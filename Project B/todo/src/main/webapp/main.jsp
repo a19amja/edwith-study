@@ -115,7 +115,9 @@ main section .card {
 	<main>
 		<h2 class="page-title">나의 해야 할 일들</h2>
 		<div class="insert">
-			<button>새로운 TO DO 등록</button>
+			<form method="POST" action="/todo/newtodo">
+				<button type="submit">새로운 TO DO 등록</button>
+			</form>
 		</div>
 		<section>
 			<ul class="card class">
@@ -140,7 +142,7 @@ main section .card {
 		</section>
 		<section>
 			<ul class="card class">
-			<li>DOING</li>
+				<li>DOING</li>
 			</ul>
 			<ul class="card">
 				<li class="title">Project B 작성</li>
@@ -160,7 +162,7 @@ main section .card {
 		</section>
 		<section>
 			<ul class="card class">
-			<li>DONE</li>
+				<li>DONE</li>
 			</ul>
 			<ul class="card">
 				<li class="title">Project B 끝내자</li>

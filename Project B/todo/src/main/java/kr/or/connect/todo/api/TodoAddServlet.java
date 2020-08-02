@@ -1,7 +1,6 @@
 package kr.or.connect.todo.api;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,15 +20,40 @@ public class TodoAddServlet extends HttpServlet {
 
 	}
 
-	protected void service(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		response.setContentType("text/html; charset=utf-8");
-		PrintWriter out = response.getWriter();
-		out.print("<h1>Hello Servlet</h1>");
+//	protected void service(HttpServletRequest request, HttpServletResponse response)
+//			throws ServletException, IOException {
+//		response.setContentType("text/html; charset=utf-8");
+//		PrintWriter out = response.getWriter();
+//		out.print("<h1>Hello Servlet</h1>");
+//
+//		String title = "플젝 끝내기";
+//		String name = "정선아";
+//		int sequence = 1;
+//
+//		TodoDto dto = new TodoDto(title, name, sequence);
+//
+//		TodoDao dao = new TodoDao();
+//
+//		int insertCount = dao.addTodo(dto);
+//
+//		System.out.println(insertCount);
+//	}
 
-		String title = "플젝 끝내기";
-		String name = "정선아";
-		int sequence = 1;
+//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//
+//	}
+//
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html; charset=utf-8");
+//		PrintWriter out = response.getWriter();
+//		out.println("TodoAddServlet.java");
+//		TodoDao 이용해서 테이블에 저장 
+
+		String title = request.getParameter("job");
+		String name = request.getParameter("name");
+		int sequence = Integer.parseInt(request.getParameter("priority"));
 
 		TodoDto dto = new TodoDto(title, name, sequence);
 
@@ -38,14 +62,8 @@ public class TodoAddServlet extends HttpServlet {
 		int insertCount = dao.addTodo(dto);
 
 		System.out.println(insertCount);
-	}
 
-//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//
-//	}
-//
-//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//
-//	}
+		response.sendRedirect("/todo/main");
+	}
 
 }
