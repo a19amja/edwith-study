@@ -117,7 +117,7 @@ button[type="submit"], [type="reset"] {
 				<h1>할 일 등록</h1>
 
 				<div class="input-title">어떤 일인가요?</div>
-				<input class="job" type="text" name="job" placeholder="웹 프로그래밍 공부하기 (24자까지)" />
+				<input class="job" type="text" name="job" placeholder="웹 프로그래밍 공부하기 (24자까지)" maxlength="24"/>
 
 				<div class="input-title">누가 할 일인가요?</div>
 				<input class="name" type="text" name="name" placeholder="홍길동" />
