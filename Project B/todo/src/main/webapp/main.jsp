@@ -64,9 +64,13 @@ main .insert button {
 	border: none;
 }
 
+/* main .card.list {
+	overflow: auto;
+} */
 main section {
 	float: left;
 	margin: 5px;
+	width: 32%;
 }
 
 section ul li {
@@ -119,67 +123,70 @@ main section .card {
 				<button type="submit">새로운 TO DO 등록</button>
 			</form>
 		</div>
-		<section>
-			<ul class="card class">
-				<li>TO DO</li>
-			</ul>
-			<ul class="card">
-				<li class="title">Project B 완성하기</li>
-				<li class="info">등록날짜: 2020.08.01, 정선아, 우선순위 1</li>
-				<button>&#8594;</button>
-				<!-- <button> → </button> -->
-			</ul>
-			<ul class="card">
-				<li class="title">Project B 완성하기</li>
-				<li class="info">등록날짜: 2020.08.01, 정선아, 우선순위 1</li>
-				<button>&#8594;</button>
-			</ul>
-			<ul class="card">
-				<li class="title">Project B 완성하기</li>
-				<li class="info">등록날짜: 2020.08.01, 정선아, 우선순위 1</li>
-				<button>&#8594;</button>
-			</ul>
-		</section>
-		<section>
-			<ul class="card class">
-				<li>DOING</li>
-			</ul>
-			<ul class="card">
-				<li class="title">Project B 작성</li>
-				<li class="info">등록날짜: 2020.08.01, 정선아, 우선순위 1</li>
-				<button>&#8594;</button>
-			</ul>
-			<ul class="card">
-				<li class="title">Project B 작성</li>
-				<li class="info">등록날짜: 2020.08.01, 정선아, 우선순위 1</li>
-				<button>&#8594;</button>
-			</ul>
-			<ul class="card">
-				<li class="title">Project B 작성</li>
-				<li class="info">등록날짜: 2020.08.01, 정선아, 우선순위 1</li>
-				<button>&#8594;</button>
-			</ul>
-		</section>
-		<section>
-			<ul class="card class">
-				<li>DONE</li>
-			</ul>
-			<ul class="card">
-				<li class="title">Project B 끝내자</li>
-				<li class="info">등록날짜: 2020.08.01, 정선아, 우선순위 1</li>
-				<button>&#8594;</button>
-			</ul>
-			<ul class="card">
-				<li class="title">Project B 끝내자</li>
-				<li class="info">등록날짜: 2020.08.01, 정선아, 우선순위 1</li>
-				<button>&#8594;</button>
-			</ul>
-			<ul class="card">
-				<li class="title">Project B 끝내자</li>
-				<li class="info">등록날짜: 2020.08.01, 정선아, 우선순위 1</li>
-				<button>&#8594;</button>
-			</ul>
-		</section>
+		<div class="card list">
+			<section>
+				<ul class="card class">
+					<li>TO DO</li>
+				</ul>
+				<c:forEach var="dto" items="${todoList}">
+					<form method="POST" action="/todo/TodoTypeServlet">
+						<ul class="card">
+							<li class="title">${dto.getTitle()}</li>
+							<li class="info">등록날짜: ${dto.getRegdate().split(" ")[0].replace("-",".")}, ${dto.getName()}, 우선순위 ${dto.getSequence()}</li>
+							<input type="text" value="${dto.getId()}" name="id" style="display: none;" />
+							<!-- 						<input type="text" value="{$dto.getType()}" name="type" style="display:none;" /> -->
+							<button type="submit">&#8594;</button>
+						</ul>
+					</form>
+				</c:forEach>
+			</section>
+			<section>
+				<ul class="card class">
+					<li>DOING</li>
+				</ul>
+				<c:forEach var="dto" items="${doingList}">
+					<form method="POST" action="/todo/TodoTypeServlet">
+						<ul class="card">
+							<li class="title">${dto.getTitle()}</li>
+							<li class="info">등록날짜: ${dto.getRegdate().split(" ")[0].replace("-",".")}, ${dto.getName()}, 우선순위 ${dto.getSequence()}</li>
+							<input type="text" value="${dto.getId()}" name="id" style="display: none;" />
+							<!-- 						<input type="text" value="{$dto.getType()}" name="type" style="display:none;" /> -->
+							<button type="submit">&#8594;</button>
+						</ul>
+					</form>
+				</c:forEach>
+			</section>
+			<section>
+				<ul class="card class">
+					<li>DONE</li>
+				</ul>
+				<c:forEach var="dto" items="${doneList}">
+					<form method="POST" action="/todo/TodoTypeServlet">
+						<ul class="card">
+							<li class="title">${dto.getTitle()}</li>
+							<li class="info">등록날짜: ${dto.getRegdate().split(" ")[0].replace("-",".")}, ${dto.getName()}, 우선순위 ${dto.getSequence()}</li>
+							<input type="text" value="${dto.getId()}" name="id" style="display: none;" />
+							<!-- 						<input type="text" value="{$dto.getType()}" name="type" style="display:none;" /> -->
+							<!-- <button type="submit">&#8594;</button> -->
+						</ul>
+					</form>
+				</c:forEach>
+			</section>
+		</div>
 	</main>
+	<!-- 	
+	<script type="text/javascript">
+		var elements = document.getElementsByClassName("sendNext");
+		 
+		var myFunction = function() {
+			this.
+			console.log(this);
+
+		};
+
+		for (var i = 0; i < elements.length; i++) {
+			elements[i].addEventListener('click', myFunction, false);
+		}
+	</script> -->
 </body>
 </html>
